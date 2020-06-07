@@ -1,5 +1,4 @@
-floortxt = open("input.txt", "r").read()
-floorlist = [i for i in floortxt]
+floorlist = open("input.txt", "r").read()
 
 floor = 0 # Part one
 
@@ -23,6 +22,4 @@ for i in floorlist:
     if floortwo == (-1):
         break
         
-
 print(position)
-
