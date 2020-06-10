@@ -23,8 +23,6 @@ def goRight():
     if position not in [3,6,9]:
         position += 1
 
-print(position)
-
 for i in codelist:
     while len(i) > 0:
         if i[0] == "U":
@@ -36,7 +34,6 @@ for i in codelist:
         elif i[0] == "R":
             goRight()
         i = i[1:]
-        print(position)
     if len(i) == 0:
         code.append(position)
 
