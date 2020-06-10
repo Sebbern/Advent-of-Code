@@ -37,7 +37,6 @@ for i in codelist:
             goRight()
         i = i[1:]
         print(position)
-        #print(i)
     if len(i) == 0:
         code.append(position)
 
