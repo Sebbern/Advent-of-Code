@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 intcode = open("input.txt", "r").read().split()
 
 

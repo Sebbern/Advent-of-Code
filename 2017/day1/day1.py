@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 captcha = open("input.txt", "r").read()
 captchalist = [x for x in str(captcha)]
 

@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import itertools
 
 freqlist = open("input.txt", "r").read().split()

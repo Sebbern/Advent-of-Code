@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 floorlist = open("input.txt", "r").read()
 
 floor = 0 # Part one

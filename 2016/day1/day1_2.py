@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 movementlist = open("input.txt", "r").read().replace(",", "").split()
 
 f = 0

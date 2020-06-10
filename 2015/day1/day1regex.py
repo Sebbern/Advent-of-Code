@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import re
 floorlist = open("input.txt", "r").read()
 openparenRegex = re.compile(r'[(]')

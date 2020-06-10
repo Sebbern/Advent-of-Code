@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 codelist = open("input.txt", "r").read().split()
 position = 5
 code = []
