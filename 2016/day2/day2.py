@@ -42,4 +42,3 @@ for i in codelist:
         code.append(position)
 
 print(code)
-
