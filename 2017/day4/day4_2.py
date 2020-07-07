@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 passphrase = open("input.txt", "r").read().splitlines()
 validpassphrases = 0
 word = []
@@ -12,8 +10,8 @@ for u in passphrase:
         i = str().join(sorted(i))
         if i in anagram:
             validpassphrases -= 1
-            anagram = []
             break
         anagram.append(i)
+    anagram = []
 
 print(validpassphrases)

@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 passphrase = open("input.txt", "r").read().splitlines()
 validpassphrases = 0
 word = []
