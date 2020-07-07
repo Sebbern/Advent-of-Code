@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 masslist = open("input.txt", "r").read().split()
 
 fuel = 0 # Part one
