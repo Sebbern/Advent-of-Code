@@ -11,8 +11,6 @@ for u in passphrase:
     for i in word:
         i = str().join(sorted(i))
         if i in anagram:
-            print(word)
-            print(i)
             validpassphrases -= 1
             anagram = []
             break
