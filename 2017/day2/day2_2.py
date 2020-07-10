@@ -12,8 +12,5 @@ for u in checksumlist:
                 dividesum = int(i) / int(o)
                 checksum += dividesum
                 break
-            else:
-                continue
-            break
 
 print(int(checksum))
