@@ -2,7 +2,6 @@ checksumlist = open("input.txt", "r").read().splitlines()
 templist = []
 checksum = 0
 dividesum = 0
-test = 0
 
 for u in checksumlist:
     templist = u.split('\t')
