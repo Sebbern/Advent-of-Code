@@ -34,7 +34,6 @@ for i in codelist:
         elif i[0] == "R":
             goRight()
         i = i[1:]
-    if len(i) == 0:
-        code.append(position)
+    code.append(position)
 
 print(code)
