@@ -18,6 +18,3 @@ for noun in range(100):
         if program[0] == 19690720:
             print(100 * noun + verb)
             break
-    else:
-        continue
-    break
