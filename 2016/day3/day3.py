@@ -8,8 +8,7 @@ while len(trianglelist) > 0:
     c = int(trianglelist[2]) 
     if a + b > c and b + c > a and a + c > b:
         validtriangle += 1
-        trianglelist = trianglelist[3:]
-    else:
-        trianglelist = trianglelist[3:]
+    trianglelist = trianglelist[3:]
+
 
 print(validtriangle)
