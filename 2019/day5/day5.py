@@ -1,6 +1,13 @@
 intcode = [int(i) for i in open("input.txt", "r").read().split(",")]
 position = 0
 program = intcode[:]
+for i in range(10000):
+    program.append(0)
+
+def value():
+    global value1, value2
+    value1 = int(program[int(program[position+1])]) if mode1 == 0 else int(program[position+1])
+    value2 = int(program[int(program[position+2])]) if mode2 == 0 else int(program[position+2])
 
 while True:
     opcode = program[position] % 100
@@ -14,14 +21,12 @@ while True:
         break
 
     if opcode == 1:
-        value1 = int(program[int(program[position+1])]) if mode1 == 0 else int(program[position+1])
-        value2 = int(program[int(program[position+2])]) if mode2 == 0 else int(program[position+2])
+        value()
         program[int(program[position+3])] = value1 + value2
         position += 4
 
     if opcode == 2:
-        value1 = int(program[int(program[position+1])]) if mode1 == 0 else int(program[position+1])
-        value2 = int(program[int(program[position+2])]) if mode2 == 0 else int(program[position+2])
+        value()
         program[int(program[position+3])] = value1 * value2
         position += 4
 
@@ -30,39 +35,34 @@ while True:
         position += 2
 
     if opcode == 4:
-        value1 = int(program[int(program[position+1])]) if mode1 == 0 else int(program[position+1])
+        value()
         print(value1)
         position += 2
 
     if opcode == 5:
-        value1 = int(program[int(program[position+1])]) if mode1 == 0 else int(program[position+1])
-        value2 = int(program[int(program[position+2])]) if mode2 == 0 else int(program[position+2])
+        value()
         if value1 != 0:
             position = value2
         else:
             position += 3
 
     if opcode == 6:
-        value1 = int(program[int(program[position+1])]) if mode1 == 0 else int(program[position+1])
-        value2 = int(program[int(program[position+2])]) if mode2 == 0 else int(program[position+2])
+        value()
         if value1 == 0:
             position = value2
         else:
             position += 3
 
     if opcode == 7:
-        value1 = int(program[int(program[position+1])]) if mode1 == 0 else int(program[position+1])
-        value2 = int(program[int(program[position+2])]) if mode2 == 0 else int(program[position+2])
+        value()
         if value1 < value2:
             program[int(program[position+3])] = 1
-
         else:
             program[int(program[position+3])] = 0
         position += 4
 
     if opcode == 8:
-        value1 = int(program[int(program[position+1])]) if mode1 == 0 else int(program[position+1])
-        value2 = int(program[int(program[position+2])]) if mode2 == 0 else int(program[position+2])
+        value()
         if value1 == value2:
             program[int(program[position+3])] = 1
         else:
