@@ -15,11 +15,9 @@ while len(passwordlist) > 0:
     letter = passwordlist[1].strip(":")
     password = passwordlist[2]
     passwordlist = passwordlist[3:]
-    print(first, second, letter, password, password[first], password[second])
 
     if password[first] == letter or password[second] == letter:
         if password[first] != password[second]:
             validpasswords += 1
-            print("yes")
 
 print(validpasswords)
