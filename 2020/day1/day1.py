@@ -5,3 +5,6 @@ for i in report:
         if int(i) + int(u) == 2020:
             print (int(i) * int(u))
             break
+    else:
+        continue
+    break
