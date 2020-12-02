@@ -7,7 +7,6 @@ second = 0
 validpasswords = 0
 
 while len(passwordlist) > 0:
-    count = 0
     minmax = passwordlist[0]
     first, second = minmax.split("-")
     first = int(first) - 1
