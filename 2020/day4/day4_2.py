@@ -42,7 +42,7 @@ for u in passports:
                 if b in ["amb", "blu", "brn", "gry", "grn", "hzl", "oth"]:
                     test += 1
             elif a == 'pid':
-                if len(b) == 9:
+                if bool(re.fullmatch(r'[0-9]{9}', b)):
                     test += 1
 
         if test == 7:
