@@ -14,10 +14,9 @@ for i in answers:
         person = 0
 
         continue
-
     for u in i:
         groupyes.append(u)
-        
+
     person += 1
 
 print(yes)
