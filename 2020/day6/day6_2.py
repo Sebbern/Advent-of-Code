@@ -10,13 +10,10 @@ for i in answers:
         yes += len(allyes)
 
         groupyes = []
-        uniqueyes = []
         person = 0
-
         continue
     for u in i:
         groupyes.append(u)
-
     person += 1
 
 print(yes)

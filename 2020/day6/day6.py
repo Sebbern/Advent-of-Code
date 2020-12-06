@@ -9,7 +9,6 @@ for i in answers:
         yes += len(uniqueyes)
 
         groupyes = []
-        uniqueyes = []
     for u in i:
         groupyes.append(u)
 
