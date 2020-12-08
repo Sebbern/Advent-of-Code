@@ -20,7 +20,6 @@ for u in rules:
 
         for t in rules[strippedy]:
             rules[u].append(t)
-    #print(u, rules[u])
 
     if "shiny gold" in str(rules[u]):
         shinybag += 1
