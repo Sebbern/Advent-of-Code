@@ -16,6 +16,7 @@ for i in numbers:
         
         if result == 0:
             print(i)
+            break
         
         result = 0
 
