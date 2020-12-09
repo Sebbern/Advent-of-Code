@@ -11,7 +11,7 @@ for i in numbers:
         for x in preamble:
             for y in preamble:
                 if int(x) + int(y) == int(i):
-                    if int(x) != int(y):
+                    if x != y:
                         result += 1
         
         if result == 0:
