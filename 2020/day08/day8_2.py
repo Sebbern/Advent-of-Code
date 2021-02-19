@@ -14,11 +14,8 @@ while True:
             checkforerror = 1
             instruction = "jmp"
             idx += int(count)
-            op = boot[idx]
-        
         else:
             idx += 1
-            op = boot[idx]
 
     elif instruction == "jmp":
         if checkforerror == 0:
@@ -26,11 +23,8 @@ while True:
             checkforerror = 1
             instruction = "nop"
             idx += 1
-            op = boot[idx]
-
         else:
             idx += int(count)
-            op = boot[idx]
 
     elif instruction == "acc":
         acc += int(count)
@@ -41,10 +35,8 @@ while True:
         checkforerror = 0
         if instruction == "nop":
             idx += 1
-            op = boot[idx]
         elif instruction == "jmp":
             idx += int(count)
-            op = boot[idx]
 
     idxlist.append(idx)
     op = boot[idx]

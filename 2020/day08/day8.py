@@ -9,10 +9,8 @@ while True:
     instruction, count = op.split()
     if instruction == "nop":
         idx += 1
-        op = boot[idx]
     elif instruction == "jmp":
         idx += int(count)
-        op = boot[idx]
     elif instruction == "acc":
         acc += int(count)
         idx += 1
