@@ -1,4 +1,4 @@
-depth = open("input.txt", "r").readlines()
+depth = open("input.txt", "r").read().splitlines()
 increase = 0
 temp = 0
 
