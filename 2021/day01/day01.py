@@ -3,8 +3,8 @@ increase = 0
 temp = 0
 
 for i in depth:
-    if int(temp) != 0:
-        if int(temp) < int(i):
+    if temp != 0:
+        if temp < int(i):
             increase += 1
 
     temp = int(i)
