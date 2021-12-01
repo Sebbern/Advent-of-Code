@@ -1,6 +1,3 @@
-from typing import Counter
-
-
 string = open("input.txt","r").read().splitlines()
 fourletters = ""
 pair = ""
@@ -8,11 +5,9 @@ pairlist = []
 doublepair = False
 letterrepeat = False
 nicestring = 0
-Counter = 0
 
 for i in string:
     for u in i:
-        Counter += 1
         fourletters += u
         pair += u
         if len(pair) > 1:
