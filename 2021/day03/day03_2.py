@@ -1,13 +1,13 @@
-Binary = open("input.txt", "r").read().split()
+binary = open("input.txt", "r").read().split()
 binarycount = 0
 zerocount = 0
 onecount = 0
 realbinary = ""
-co2binarylist = Binary
+co2binarylist = binary
 co2binary = ""
 
 while binarycount < 12:
-    for i in Binary:
+    for i in binary:
         if i[binarycount] == "0":
             zerocount += 1
         elif i[binarycount] == "1":
@@ -18,8 +18,8 @@ while binarycount < 12:
     elif onecount > zerocount or onecount == zerocount:
         realbinary += "1"
         
-    if len(Binary) > 1:
-        Binary = [x for x in Binary if x.startswith(realbinary)]
+    if len(binary) > 1:
+        binary = [x for x in binary if x.startswith(realbinary)]
         
     zerocount = 0
     onecount = 0
@@ -46,5 +46,5 @@ while binarycount < 12:
     onecount = 0
     binarycount += 1
 
-lifesupportrating = int(Binary[0], 2) * int(co2binarylist[0], 2)
+lifesupportrating = int(binary[0], 2) * int(co2binarylist[0], 2)
 print(lifesupportrating)

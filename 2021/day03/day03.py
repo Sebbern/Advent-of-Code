@@ -1,4 +1,4 @@
-Binary = open("input.txt", "r").read().split()
+binary = open("input.txt", "r").read().split()
 binarycount = 0
 zerocount = 0
 onecount = 0
@@ -6,7 +6,7 @@ gammarate = [""]
 epsilonrate = [""]
 
 while binarycount < 12:
-    for i in Binary:
+    for i in binary:
         if i[binarycount] == "0":
             zerocount += 1
         elif i[binarycount] == "1":
