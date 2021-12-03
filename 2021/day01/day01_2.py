@@ -1,17 +1,13 @@
 depth = open("input.txt", "r").read().splitlines()
 increase = 0
-depthlist = []
 groupA = 0
 groupB = 0
 
-for i in depth:
-    depthlist.append(i)
-    
-while len(depthlist) > 3:
-    groupA = int(depthlist[0]) + int(depthlist[1]) + int(depthlist[2])
-    groupB = int(depthlist[1]) + int(depthlist[2]) + int(depthlist[3])
+while len(depth) > 3:
+    groupA = int(depth[0]) + int(depth[1]) + int(depth[2])
+    groupB = int(depth[1]) + int(depth[2]) + int(depth[3])
     if groupA < groupB:
         increase += 1
-    depthlist = depthlist[1:]
+    depth = depth[1:]
 
 print(increase)
