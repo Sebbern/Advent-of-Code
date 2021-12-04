@@ -65,4 +65,3 @@ for i in winner_board:
 winning_sum = winning_sum * int(bingo_numbers[bingo_count-1])
 
 print(winning_sum)
-        
