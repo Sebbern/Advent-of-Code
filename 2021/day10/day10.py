@@ -1,6 +1,3 @@
-from os import error
-
-
 nav_sub = open("input.txt","r").read().splitlines()
 
 symbol_dict = {"]":"[", ")":"(", ">":"<", "}":"{"}
