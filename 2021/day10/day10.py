@@ -15,5 +15,7 @@ for i in nav_sub:
             else:
                 error_score += int(symbol_values.get(u))
                 break
-
+    
+    symbol_list = []
+    
 print(error_score)
