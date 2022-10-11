@@ -62,7 +62,7 @@ while True:
         break
 
 for i in last_winning_board:
-    if str(i)[0].isdigit() == True:
+    if str(i)[0].isdigit():
         winning_sum += int(i)
 
 winning_sum = winning_sum * int(bingo_numbers[bingo_count-1])
