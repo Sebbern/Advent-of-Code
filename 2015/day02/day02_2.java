@@ -4,7 +4,6 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
-
 public class day02_2 {
     public static void main(String[] args) throws FileNotFoundException, IOException {
         File inputtxt = new File("2015\\day02\\input.txt");
