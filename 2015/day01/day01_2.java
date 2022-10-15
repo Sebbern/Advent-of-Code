@@ -1,10 +1,12 @@
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
 
 public class day01_2 {
-    public static void main(String[] args) throws Exception {
-        File inputtxt = new File("C:\\Users\\sebas\\Advent-of-Code\\2015\\day01\\input.txt");
+    public static void main(String[] args) throws FileNotFoundException, IOException {
+        File inputtxt = new File("2015\\day01\\input.txt");
         BufferedReader input  = new BufferedReader(new FileReader(inputtxt));
         String string;
         int floor = 0;
@@ -27,5 +29,6 @@ public class day01_2 {
                 }
             }
         }
+        input.close();
     }
 }
