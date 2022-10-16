@@ -21,18 +21,12 @@ public class day03 {
                 symbol[i] = string.charAt(i);
                 String symbolString = Character.toString(symbol[i]);
 
-                if (symbolString.equals("<")){
-                    x -= 1;
-                }
-                else if (symbolString.equals(">")){
-                    x += 1;
-                }
-                else if (symbolString.equals("v")){
-                    y -= 1;
-                }
-                else if (symbolString.equals("^")){
-                    y += 1;
-                }
+                switch (symbolString) {
+                    case "<" -> x -= 1;
+                    case ">" -> x += 1;
+                    case "v" -> y -= 1;
+                    case "^" -> y += 1;
+                    }
 
                 coordinates.add(x+","+y);
             }

@@ -25,34 +25,22 @@ public class day03_2 {
                 String symbolString = Character.toString(symbol[i]);
 
                 if (turn == 0){
-                    if (symbolString.equals("<")){
-                        x -= 1;
-                    }
-                    else if (symbolString.equals(">")){
-                        x += 1;
-                    }
-                    else if (symbolString.equals("v")){
-                        y -= 1;
-                    }
-                    else if (symbolString.equals("^")){
-                        y += 1;
+                    switch (symbolString) {
+                        case "<" -> x -= 1;
+                        case ">" -> x += 1;
+                        case "v" -> y -= 1;
+                        case "^" -> y += 1;
                     }
                     coordinates.add(x+","+y);
                     turn += 1;
                 }
 
                 else if (turn == 1){
-                    if (symbolString.equals("<")){
-                        roboX -= 1;
-                    }
-                    else if (symbolString.equals(">")){
-                        roboX += 1;
-                    }
-                    else if (symbolString.equals("v")){
-                        roboY -= 1;
-                    }
-                    else if (symbolString.equals("^")){
-                        roboY += 1;
+                    switch (symbolString) {
+                        case "<" -> roboX -= 1;
+                        case ">" -> roboX += 1;
+                        case "v" -> roboY -= 1;
+                        case "^" -> roboY += 1;
                     }
                     turn -= 1;
                     coordinates.add(roboX+","+roboY);
