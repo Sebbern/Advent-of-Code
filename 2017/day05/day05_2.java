@@ -17,15 +17,16 @@ public class day05_2 {
         while ((text = input.readLine()) != null){
             labyrinth.add(text);
         }
+        input.close();
         
         try{
             for (int i=Integer.parseInt(labyrinth.get(idx)); i<labyrinth.size(); i=Integer.parseInt(labyrinth.get(idx))){
                 steps += 1;
                 if(Integer.parseInt(labyrinth.get(idx)) < 3){
-                    labyrinth.set(idx, Integer.toString((Integer.parseInt(labyrinth.get(idx))+1)));
+                    labyrinth.set(idx, Integer.toString(i+1));
                 }
                 else {
-                    labyrinth.set(idx, Integer.toString((Integer.parseInt(labyrinth.get(idx))-1)));
+                    labyrinth.set(idx, Integer.toString(i-1));
                 }
                 idx += i;
             }
@@ -33,6 +34,5 @@ public class day05_2 {
         catch (IndexOutOfBoundsException e){
             System.out.println(steps);
         }
-    input.close();
     }
 }

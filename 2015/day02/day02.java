@@ -18,7 +18,7 @@ public class day02 {
             int z = Integer.parseInt(box[2]);
             sum += ((2*x*y)+(2*y*z)+(2*x*z))+Math.min(Math.min((x*y),(y*z)),(x*z));
         }
-        System.out.println(sum);
         input.close();
+        System.out.println(sum);
     }
 }

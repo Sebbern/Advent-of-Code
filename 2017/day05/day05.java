@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class day05 {
     public static void main(String[] args) throws FileNotFoundException, IOException
-     {
+    {
         File inputtxt = new File("2017\\day05\\input.txt");
         BufferedReader input = new BufferedReader(new FileReader(inputtxt));
         String text;
@@ -17,17 +17,17 @@ public class day05 {
         while ((text = input.readLine()) != null){
             labyrinth.add(text);
         }
+        input.close();
         
         try{
             for (int i=Integer.parseInt(labyrinth.get(idx)); i<labyrinth.size(); i=Integer.parseInt(labyrinth.get(idx))){
                 steps += 1;
-                labyrinth.set(idx, Integer.toString((Integer.parseInt(labyrinth.get(idx))+1)));
+                labyrinth.set(idx, Integer.toString(i+1));
                 idx += i;
             }
         }
         catch (IndexOutOfBoundsException e){
             System.out.println(steps);
         }
-    input.close();
     }
 }
