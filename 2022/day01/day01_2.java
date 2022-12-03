@@ -41,6 +41,7 @@ public class day01_2 {
 
         }
 
+
         System.out.println(caloriesFirst+caloriesSecond+caloriesThird);
     }
 }
