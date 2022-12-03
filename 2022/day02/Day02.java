@@ -45,10 +45,6 @@ public class Day02 {
             else if ((x.equals("A") && y.equals("B")) || (x.equals("B") && y.equals("C")) || (x.equals("C") && y.equals("A"))){
                 points += 6;
             }
-
-            else if ((x.equals("A") && y.equals("C")) || (x.equals("B") && y.equals("A")) || (x.equals("C") && y.equals("B"))){
-                points += 0;
-            }
         }
         System.out.println(points);
     }    

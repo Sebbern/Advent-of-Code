@@ -28,7 +28,6 @@ public class Day02_2 {
 
             switch (y){
                 case "X": 
-                    points += 0;
                     switch (x){
                         case "A": points += 3; break;
                         case "B": points += 1; break;
