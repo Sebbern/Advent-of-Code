@@ -4,22 +4,20 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class Day03 {
-    private static char loop(char[] a, char[] b){
+public class Day03_2 {
+    private static char loop(char[] a, char[] b, char[] c){
         for (char i: a){
             for (char u: b){
                 if (i == u){
-                    return i;
+                    for (char y: c){
+                        if (u == y){
+                            return y;
+                        }
+                    }
                 }
             }
         }
         return 0;
-    }
-
-    private static String[] mid(String i){
-        final int mid = i.length()/2;
-        String[] split = {i.substring(0, mid), i.substring(mid)};
-        return split;
     }
 
     public static void main(String[] args) throws IOException{
@@ -33,20 +31,20 @@ public class Day03 {
         }
         input.close();
 
-        String a, b;
-        String[] split;
-        char[] chA, chB;
+        String a, b, c;
+        char[] chA, chB, chC;
         int prioritySum = 0; 
         int value;
 
-        for (String i: rucksackList){
-            split = mid(i);
-            a = split[0];
-            b = split[1];
+        for (int i = 0, u = 1, y = 2; y<rucksackList.size(); i += 3, u += 3, y += 3){
+            a = rucksackList.get(i);
+            b = rucksackList.get(u);
+            c = rucksackList.get(y);
             chA = a.toCharArray();
             chB = b.toCharArray();
+            chC = c.toCharArray();
 
-            value = loop(chA, chB);
+            value = loop(chA, chB, chC);
             if (65 <= value && value <= 90){
                 value -= 38;
             }
