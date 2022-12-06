@@ -21,13 +21,9 @@ public class Day06_2 {
                     break;
                 }
             }
-            else if (letterSet.contains(split[0].substring(0,1))){
-                for (String i: letterSet){
-                    if (i.equals(split[0].substring(0,1))){
-                        letterSet.remove(0);
-                        break;
-                    }
-                }
+            
+            else while (letterSet.contains(split[0].substring(0,1))){
+                letterSet.remove(0);
             }
         }
     }
