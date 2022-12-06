@@ -17,7 +17,6 @@ public class Day06_2 {
                 split = Arrays.copyOfRange(split, 1, split.length);
                 count++;
                 if (letterSet.size() == 14){
-                    System.out.println(letterSet);
                     System.out.println(count);
                     break;
                 }
