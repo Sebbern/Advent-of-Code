@@ -19,17 +19,9 @@ public class Day08_2 {
         for (int x = 0; x<input.size(); x++){
             split = input.get(x).split("");
 
-            if (x == 0 || x == input.size()-1){
-
-            }
-
-            else{
+            if (!(x == 0 || x == input.size()-1)){
                 for (int y = 0; y<split.length; y++){
-                    if (y == 0 || y == split.length-1){
-                    
-                    }
-                    
-                    else{
+                    if (!(y == 0 || y == split.length-1)){
                         scenicUp = 0;
                         scenicDown = 0;
                         scenicLeft = 0;
