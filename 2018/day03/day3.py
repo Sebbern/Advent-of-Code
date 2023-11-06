@@ -1,18 +1,12 @@
 import re
 
 iList = open("input.txt", "r").read().splitlines()
-claimList = []
-
-for i in range(1000*1000):
-    claimList.append(0)
+claimList = [0] * (1000*1000)
 
 for i in iList:
-    compileI = re.compile(r"(\d+),(\d+)")
-    compileClaim = re.compile(r"(\d+)x(\d+)")
+    compileI = re.compile(r"(\d+),(\d+)[:]\s(\d+)x(\d+)")
     reI = re.findall(compileI, i)
-    reClaim = re.findall(compileClaim, i)
-    x, y = reI[0][0], reI[0][1]
-    xClaim, yClaim = reClaim[0][0], reClaim[0][1]
+    x, y, xClaim, yClaim = reI[0][0], reI[0][1], reI[0][2], reI[0][3]
     claimStart = (int(x)+1000*int(y))
 
     for u in range(int(xClaim)):
