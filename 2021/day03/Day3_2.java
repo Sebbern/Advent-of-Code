@@ -13,7 +13,7 @@ public class Day3_2 {
         zeroBinaryO2 = 0, oneBinaryO2 = 0, zeroBinaryCO2 = 0, oneBinaryCO2 = 0;
         StringBuilder O2Binary = new StringBuilder();
         StringBuilder CO2Binary = new StringBuilder();
-        boolean found = false, CO2 = false;
+        boolean foundO2 = false, foundCO2 = false, O2BinaryCheck = false, CO2BinaryCheck = false;
 
         while (count < input.get(0).length()){
             if (count == 0){
@@ -38,16 +38,23 @@ public class Day3_2 {
             }
             else {
                 for (String i : input) {
-                    if (i.startsWith(O2Binary.toString())){
-                        if (i.charAt(count) == '0'){
-                            zeroBinaryO2 += 1;
+                    if (i.startsWith(O2Binary.toString()) && !O2BinaryCheck){
+                        if (!foundO2){
+                            if (i.charAt(count) == '0'){
+                                zeroBinaryO2 += 1;
+                            }
+                            else if (i.charAt(count) == '1'){
+                                oneBinaryO2 += 1;
+                            }
                         }
-                        else if (i.charAt(count) == '1'){
-                            oneBinaryO2 += 1;
+                        else {
+                            O2Binary.setLength(0);
+                            O2Binary.append(i);
+                            O2BinaryCheck = true;
                         }
                     }
-                    else if (i.startsWith(CO2Binary.toString()) && !CO2){
-                        if (!found){
+                    else if (i.startsWith(CO2Binary.toString()) && !CO2BinaryCheck){
+                        if (!foundCO2){
                             if (i.charAt(count) == '0'){
                                 zeroBinaryCO2 += 1;
                             }
@@ -58,22 +65,30 @@ public class Day3_2 {
                         else {
                             CO2Binary.setLength(0);
                             CO2Binary.append(i);
-                            CO2 = true;
+                            CO2BinaryCheck = true;
                         }
                     }
                 }
 
-                if (zeroBinaryO2 < oneBinaryO2){
-                    O2Binary.append(1);
-                }
-                else if (oneBinaryO2 < zeroBinaryO2){
-                    O2Binary.append(0);
-                }
-                else if (oneBinaryO2 == zeroBinaryO2){
-                    O2Binary.append(1);
+                if (!foundO2){
+                    if (zeroBinaryO2 + oneBinaryO2 != 1){
+                        if (zeroBinaryO2 < oneBinaryO2){
+                            O2Binary.append(1);
+                        }
+                        else if (oneBinaryO2 < zeroBinaryO2){
+                            O2Binary.append(0);
+                        }
+                        else if (oneBinaryO2 == zeroBinaryO2){
+                            O2Binary.append(1);
+                        }
+                    }
+                    else {
+                        foundO2 = true;
+                    }
+                        
                 }
 
-                if (!found){
+                if (!foundCO2){
                     if (zeroBinaryCO2 + oneBinaryCO2 != 1){
                         if (zeroBinaryCO2 < oneBinaryCO2){
                             CO2Binary.append(0);
@@ -86,14 +101,15 @@ public class Day3_2 {
                         }
                     }
                     else {
-                        found = true;
+                        foundCO2 = true;
                     }
-        
                 }
             }
 
-            zeroBinaryO2 = 0; oneBinaryO2 = 0;
-            if (!found){
+            if (!foundO2){
+                zeroBinaryO2 = 0; oneBinaryO2 = 0;
+            }
+            if (!foundCO2){
                 zeroBinaryCO2 = 0; oneBinaryCO2 = 0;
             }
             count++;
