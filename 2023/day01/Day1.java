@@ -17,12 +17,12 @@ public class Day1 {
                 if ((int)i.charAt(v) < 58 && 47 < (int)i.charAt(v) && valueLeft.length() == 0){
                     valueLeft = String.valueOf(i.charAt(v));
                 }
-                else {} v++;
+                else if (valueLeft.length() == 0) v++;
 
                 if ((int)i.charAt(h) < 58 && 47 < (int)i.charAt(h) && valueRight.length() == 0){
                     valueRight = String.valueOf(i.charAt(h));
                 }
-                else {} h--;
+                else if (valueRight.length() == 0) h--;
 
                 if (valueLeft.length() != 0 && valueRight.length() != 0) {
                     String value = valueLeft+valueRight;
