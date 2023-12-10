@@ -4,7 +4,6 @@ import math
 input_list = open("input.txt").read().splitlines()
 node_dict = {}
 direction = list(input_list[0])
-test = False
 steps = 0
 ghost_list = []
 math_list = []

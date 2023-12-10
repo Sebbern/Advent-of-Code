@@ -3,12 +3,11 @@ import re
 input_list = open("input.txt").read().splitlines()
 node_list = {}
 direction = list(input_list[0])
-test = False
 curr = "AAA"
 steps = 0
 
 for i in input_list[2:]:
-    a = re.split("[\W]+", i)
+    a = re.split(r"[\W]+", i)
     node_list[a[0]] = (a[1], a[2])
 
 while (True):
