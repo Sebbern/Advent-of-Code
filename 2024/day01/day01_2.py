@@ -1,8 +1,6 @@
 input_list = open("2024\\day01\\input.txt").read().splitlines()
 list_a = []
 list_b = []
-set_a = set()
-set_b = set()
 
 for i in input_list:
     x, y = str.split(i)
