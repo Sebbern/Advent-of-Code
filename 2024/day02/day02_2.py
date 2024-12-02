@@ -79,7 +79,6 @@ while i < len(input):
                     break
                 else:
                     bad_level = False
-                    print(input_list, "not safe")
                     input_list = []
                     break 
 
