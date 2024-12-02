@@ -1,3 +1,4 @@
+#This shouldn't work, there is one specific edge case that I cannot find
 input = open("2024\\day02\\input.txt").read().splitlines()
 
 safe = 0
@@ -7,20 +8,21 @@ i = 0
 while i < len(input):
     if bad_level == False:
         input_list = input[i].split(" ")
-    
-    if int(input_list[0]) == int(input_list[-1]):
-           input_list.pop(0)
 
     if (int(input_list[0]) > int(input_list[-1])) or ((int(input_list[0]) == int(input_list[-1])) and (int(input_list[0]) > int(input_list[1]))) or ((int(input_list[0]) > int(input_list[2])) and (int(input_list[0]) < int(input_list[1])) and (int(input_list[1]) > int(input_list[-1]))):
         for u in range(len(input_list)):
             if u == len(input_list)-1:
                 safe += 1
                 bad_level = False
-                input_list = []
                 break
 
             if (int(input_list[u]) > int(input_list[u+1])) and (1 <= (int(input_list[u]) - int(input_list[u+1])) <= 3):
-                continue
+                if u+2 < len(input_list)-1:
+                    if int(input_list[u]) > int(input_list[u+1]) and int(input_list[u+1]) < int(input_list[u+2]) and int(input_list[u]) == int(input_list[-1]) and bad_level == False:
+                        input_list.pop(u)
+                        i -= 1
+                        bad_level = True
+                        break
             else:
                 if bad_level == False:
                     if u+2 < len(input_list)-1:
@@ -45,7 +47,6 @@ while i < len(input):
                     break
                 else:
                     bad_level = False
-                    input_list = []
                     break
 
     elif (int(input_list[0]) < int(input_list[-1])) or ((int(input_list[0]) == int(input_list[-1])) and (int(input_list[0]) < int(input_list[1]))) or ((int(input_list[0]) < int(input_list[2])) and (int(input_list[0]) > int(input_list[1])) and (int(input_list[1]) < int(input_list[-1]))):
@@ -56,7 +57,12 @@ while i < len(input):
                 break
 
             if (int(input_list[u]) < int(input_list[u+1])) and (1 <= (int(input_list[u+1]) - int(input_list[u])) <= 3):
-                continue
+                if u+2 < len(input_list)-1:
+                    if int(input_list[u]) < int(input_list[u+1]) and int(input_list[u+1]) > int(input_list[u+2]) and int(input_list[u]) == int(input_list[-1]) and bad_level == False:
+                        input_list.pop(u)
+                        i -= 1
+                        bad_level = True
+                        break
             else:
                 if bad_level == False:
                     if u+2 < len(input_list)-1:
@@ -66,6 +72,8 @@ while i < len(input):
                             input_list.pop(u+1)
                         elif (int(input_list[0]) < int(input_list[2])) and (int(input_list[0]) > int(input_list[1])):
                             input_list.pop(u+1)
+                        else:
+                            input_list.pop(u)
                         i -= 1
                         bad_level = True
                         break
@@ -79,7 +87,6 @@ while i < len(input):
                     break
                 else:
                     bad_level = False
-                    input_list = []
                     break 
 
     i += 1
