@@ -42,13 +42,13 @@ for i in input:
 
                 y_check = y
                 x_check = x
-
-                y_check += direction_dict_y[direction] #Twice because M is already found
+                
+                #Twice because A is already found
+                y_check += direction_dict_y[direction] 
                 x_check += direction_dict_x[direction]
                 y_check += direction_dict_y[direction]
                 x_check += direction_dict_x[direction]
 
-                #print(x_check)
                 if input[y_check][x_check] == "S":
                     a_cross_dict[(y_check-direction_dict_y[direction],x_check-direction_dict_x[direction])] += 1
 
